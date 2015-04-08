@@ -13,14 +13,15 @@ if not len(sys.argv) == 3:
 COUNT = int(sys.argv[1])
 FILTER = sys.argv[2]
 
-hostname, aliaslist, ipaddrlist = socket.gethostbyname_ex(socket.gethostname())
-
 for i in range(COUNT):
+  ipaddrlist = socket.gethostbyname_ex(socket.gethostname())[2]
+
   for ip in ipaddrlist:
     if FILTER in ip:
       with open("ip.txt", "w") as f:
         f.write(ip)
       sys.exit(0)
+
   time.sleep(1)
 
 with open("ip.txt", "w") as f:
