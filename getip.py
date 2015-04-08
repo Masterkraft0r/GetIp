@@ -2,10 +2,6 @@ import socket
 import time
 import sys
 
-# CONSTANTS
-# COUNT = 3
-# FILTER = '192.100.125'
-
 if not len(sys.argv) == 3:
   print("Usage: getip.exe <max_time_in_sec> <filter>")
   sys.exit(1)
